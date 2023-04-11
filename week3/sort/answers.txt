@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: It had the shortest amount of time when the list was already sorted
+
+sort2 uses: merge sort
+
+How do you know?: It had the shortest time when the list was randomized but not when it was sorted because it still has to go through its process. 
+
+sort3 uses: selection sort
+
+How do you know?: It had the longest amount of time when the list was sorted and when it was randomized the times were also similar because it has to go through the list the same amount of times.

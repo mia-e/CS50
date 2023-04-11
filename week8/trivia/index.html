@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            function turnRed()
+            {
+                document.getElementById('j').style.borderColor='red';
+                document.getElementById('incorrect').style.visibility="visible"
+
+            }
+            function turRed()
+            {
+                document.getElementById('a').style.borderColor='red';
+                document.getElementById('incorrect2').style.visibility="visible"
+            }
+            function turnGreen()
+            {
+                document.getElementById('i').style.borderColor='#1df021';
+                document.getElementById('correct').style.visibility="visible"
+            }
+            function checkAnswer()
+            {
+                document.addEventListener('answer', (e) =>{
+                     e.preventDefault();
+
+                });
+                const answer = document.getElementById('answer')
+                const answerValue = answer.value.trim();
+                if (answerValue === 'red') {
+                    document.getElementById('o').style.visibility="visible"
+                    document.getElementById('h').style.visibility="hidden"
+                    answer.style.borderColor = 'green';
+                } else {
+                    document.getElementById('h').style.visibility="visible"
+                    document.getElementById('o').style.visibility="hidden"
+                    answer.style.borderColor = 'red';
+                }
+
+
+            }
+
+
+        </script>
+
+
+
+
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section mc">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>Who did betty hear the rumors from?</h3>
+                <button id = "j" onclick = "turnRed();">James</button>
+                    <small id="incorrect">incorrect</small>
+                <button id = "a" onclick = "turRed();">Augustine</button>
+                    <small id="incorrect2">incorrect</small>
+                <button id = "i" onclick = "turnGreen();">Inez</button>
+                    <small id="correct">correct</small>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>what color was the scarf?</h3>
+
+                <div class="form-check right">
+                    <form id = "f">
+                    <input id="answer" type="text" placeholder="answer">
+                    <button onClick="checkAnswer();" id="button" type="button" value="send" class="btn btn-primary">Submit</button>
+                    <small id ="h">Incorrect</small>
+                    <small id ="o">correct</small>
+                </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </body>
+</html>
